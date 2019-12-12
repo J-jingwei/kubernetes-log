@@ -62,4 +62,4 @@ kubernetes简易日志查询工具
 
 
 
-![kuberntes简易日志查询工具](https://github.com/J-jingwei/kubernetes-log/blob/master/kuberntes_log.png)
+![image](https://github.com/J-jingwei/kubernetes-log/blob/master/kuberntes_log.png)
