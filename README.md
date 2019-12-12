@@ -62,4 +62,4 @@ kubernetes简易日志查询工具
 
 
 
-![kuberntes简易日志查询工具](C:\Users\Administrator\Desktop\kuberntes简易日志查询工具.png)
+![kuberntes简易日志查询工具](https://github.com/J-jingwei/kubernetes-log/blob/master/kuberntes%E7%AE%80%E6%98%93%E6%97%A5%E5%BF%97%E6%9F%A5%E8%AF%A2%E5%B7%A5%E5%85%B7.png)
