@@ -61,5 +61,4 @@ kubernetes简易日志查询工具
 更多需求，与bug更新，可以反馈！
 
 
-
-![image](https://github.com/J-jingwei/kubernetes-log/blob/master/kuberntes_log.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019121316150924.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDk1NjQ1MA==,size_16,color_FFFFFF,t_70)
